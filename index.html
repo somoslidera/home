@@ -93,10 +93,6 @@
 </head>
 <body class="bg-gradient-to-br from-gray-900 via-[#1d3573] to-indigo-900 text-gray-200">
 
-    <script>
-        const GITHUB_IMAGE_URL = 'https://raw.githubusercontent.com/somoslidera/home/main/';
-    </script>
-
     <header id="header" class="bg-gray-900/50 backdrop-blur-lg border-b border-white/10 shadow-lg shadow-black/20 fixed top-0 left-0 right-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-3xl font-bold text-white"><img data-src="01_Branco.png" alt="Lidera Logo" class="h-10 github-img"></a>
@@ -455,7 +451,7 @@
                 document.querySelectorAll('.github-img').forEach(img => {
                     const fileName = img.getAttribute('data-src');
                     if (fileName) {
-                        img.src = GITHUB_IMAGE_URL + fileName;
+                        img.src = 'https://raw.githubusercontent.com/somoslidera/home/main/' + fileName;
                     }
                 });
             }
