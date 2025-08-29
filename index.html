@@ -8,87 +8,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Estilos personalizados para complementar o Tailwind */
-        body {
-            font-family: 'Montserrat', sans-serif;
-        }
+        body { font-family: 'Montserrat', sans-serif; }
         .hero-bg {
             background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2084&auto-format&fit=crop');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-        }
-        .section-subtitle {
-            font-size: 1rem;
-            color: #a0aec0; /* cinza claro */
-            margin-bottom: 3rem;
-        }
-        
-        /* Estilos para animação de scroll */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Estilos para Acordeão */
-        .accordion-content, .founder-bio {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-out;
-        }
-
-        /* Efeito de brilho nos cards de pilares */
-        .pillar-card {
-            position: relative;
-            overflow: hidden;
-        }
+        .section-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; text-transform: uppercase; }
+        .section-subtitle { font-size: 1rem; color: #a0aec0; margin-bottom: 3rem; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .accordion-content, .founder-bio { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out; }
+        .pillar-card { position: relative; overflow: hidden; }
         .pillar-card::before {
-            content: '';
-            position: absolute;
-            width: 150px;
-            height: 150%;
+            content: ''; position: absolute; width: 150px; height: 150%;
             background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 60%);
-            transition: transform 0.5s ease;
-            transform-origin: center;
-            transform: translateX(-150%) translateY(-20%) rotate(45deg);
-            pointer-events: none;
+            transition: transform 0.5s ease; transform-origin: center;
+            transform: translateX(-150%) translateY(-20%) rotate(45deg); pointer-events: none;
         }
-        .pillar-card:hover::before {
-            transform: translateX(150%) translateY(-20%) rotate(45deg);
-        }
-
-        /* Animação da Tarja Rolante */
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
-        }
-        .scrolling-text {
-            animation: scroll 30s linear infinite;
-        }
-
-        /* Animação de Brilho para Golden Key */
+        .pillar-card:hover::before { transform: translateX(150%) translateY(-20%) rotate(45deg); }
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
+        .scrolling-text { animation: scroll 30s linear infinite; }
         @keyframes glow {
-            0%, 100% {
-                filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.4)) drop-shadow(0 0 10px rgba(255, 215, 0, 0.2));
-            }
-            50% {
-                filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.8)) drop-shadow(0 0 25px rgba(255, 215, 0, 0.6));
-            }
+            0%, 100% { filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.4)) drop-shadow(0 0 10px rgba(255, 215, 0, 0.2)); }
+            50% { filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.8)) drop-shadow(0 0 25px rgba(255, 215, 0, 0.6)); }
         }
-        .golden-key {
-            animation: glow 2s infinite alternate;
-        }
+        .golden-key { animation: glow 2s infinite alternate; }
     </style>
 </head>
 <body class="bg-gradient-to-br from-gray-900 via-[#1d3573] to-indigo-900 text-gray-200">
@@ -320,7 +266,7 @@
                         <div class="testimonial-item">
                             <p class="text-xl italic text-gray-300">"O Lidera transformou nossa forma de gerir a equipe. Os resultados foram imediatos."</p>
                             <div class="mt-6">
-                                 <img data-src="placeholder-cliente.jpg" alt="Foto do Cliente" class="w-20 h-20 rounded-full mx-auto mb-2 border-2 border-cyan-400 object-cover github-img">
+                                <img data-src="placeholder-cliente.jpg" alt="Foto do Cliente" class="w-20 h-20 rounded-full mx-auto mb-2 border-2 border-cyan-400 object-cover github-img">
                                 <h4 class="font-bold text-white text-lg">João da Silva</h4>
                                 <p class="text-cyan-400">CEO, Empresa Exemplo</p>
                             </div>
@@ -413,7 +359,7 @@
                     <p class="section-subtitle">Pronto para destravar o potencial da sua equipe? Fale com um de nossos especialistas.</p>
                 </div>
                 <div class="max-w-3xl mx-auto">
-                    <form action="https://exemplo.com/seu-endpoint" method="POST" class="space-y-6">
+                    <form action="#" method="POST" class="space-y-6">
                         <div class="grid md:grid-cols-2 gap-6">
                             <input type="text" name="name" placeholder="Seu Nome" required class="w-full p-4 bg-gray-800/50 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#FFC866]">
                             <input type="email" name="email" placeholder="Seu E-mail" required class="w-full p-4 bg-gray-800/50 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#FFC866]">
@@ -446,15 +392,13 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // SCRIPT PARA CARREGAR IMAGENS DO GITHUB - NÃO PRECISA ALTERAR
-            if (typeof GITHUB_IMAGE_URL !== 'undefined') {
-                document.querySelectorAll('.github-img').forEach(img => {
-                    const fileName = img.getAttribute('data-src');
-                    if (fileName) {
-                        img.src = 'https://raw.githubusercontent.com/somoslidera/home/main/' + fileName;
-                    }
-                });
-            }
+            // SCRIPT CORRIGIDO PARA CARREGAR IMAGENS DO GITHUB
+            document.querySelectorAll('.github-img').forEach(img => {
+                const fileName = img.getAttribute('data-src');
+                if (fileName) {
+                    img.src = 'https://raw.githubusercontent.com/somoslidera/home/main/' + fileName;
+                }
+            });
 
             // Lógica do Menu Móvel
             const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -469,17 +413,14 @@
                 const header = item.querySelector('.accordion-header');
                 const content = item.querySelector('.accordion-content');
                 const icon = header.querySelector('.fa-chevron-down');
-
                 header.addEventListener('click', () => {
                     const isOpen = content.style.maxHeight;
-                    
                     accordionItems.forEach(otherItem => {
                         if (otherItem !== item) {
                             otherItem.querySelector('.accordion-content').style.maxHeight = null;
                             otherItem.querySelector('.fa-chevron-down').classList.remove('rotate-180');
                         }
                     });
-
                     if (isOpen) {
                         content.style.maxHeight = null;
                         icon.classList.remove('rotate-180');
@@ -495,16 +436,13 @@
             founderCards.forEach(card => {
                 const toggles = card.querySelectorAll('.founder-toggle');
                 const bio = card.querySelector('.founder-bio');
-                
                 toggles.forEach(toggle => {
                     toggle.addEventListener('click', () => {
                         const wasExpanded = card.classList.contains('expanded');
-
                         founderCards.forEach(otherCard => {
                             otherCard.classList.remove('expanded');
                             otherCard.querySelector('.founder-bio').style.maxHeight = null;
                         });
-
                         if (!wasExpanded) {
                             card.classList.add('expanded');
                             bio.style.maxHeight = bio.scrollHeight + "px";
@@ -521,7 +459,7 @@
                     testimonialItems[currentTestimonial].classList.add('hidden');
                     currentTestimonial = (currentTestimonial + 1) % testimonialItems.length;
                     testimonialItems[currentTestimonial].classList.remove('hidden');
-                }, 5000); // Muda a cada 5 segundos
+                }, 5000);
             }
             
             // Atualizar ano no rodapé
@@ -536,26 +474,21 @@
                     }
                 });
             }, { threshold: 0.1 });
-
             revealElements.forEach(el => observer.observe(el));
 
             // Rolagem suave para âncoras (com ajuste para header fixo)
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
-                    
                     const targetId = this.getAttribute('href');
                     const targetElement = document.querySelector(targetId);
-                    
                     if(targetElement) {
                         if (!mobileMenu.classList.contains('hidden')) {
                             mobileMenu.classList.add('hidden');
                         }
-                        
                         const headerOffset = document.getElementById('header').offsetHeight;
                         const elementPosition = targetElement.getBoundingClientRect().top;
                         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
                         window.scrollTo({
                             top: offsetPosition,
                             behavior: "smooth"
