@@ -13,7 +13,7 @@
             font-family: 'Montserrat', sans-serif;
         }
         .hero-bg {
-            background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1521737604-893-d14cc237f11d?q=80&w=2084&auto-format&fit=crop');
+            background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2084&auto-format&fit=crop');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -42,12 +42,7 @@
         }
 
         /* Estilos para Acordeão */
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-out;
-        }
-        .founder-bio {
+        .accordion-content, .founder-bio {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.5s ease-out;
@@ -75,12 +70,8 @@
 
         /* Animação da Tarja Rolante */
         @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
         }
         .scrolling-text {
             animation: scroll 30s linear infinite;
@@ -102,41 +93,40 @@
 </head>
 <body class="bg-gradient-to-br from-gray-900 via-[#1d3573] to-indigo-900 text-gray-200">
 
-    <!-- Cabeçalho e Navegação -->
+    <script>
+        const GITHUB_IMAGE_URL = 'https://raw.githubusercontent.com/somoslidera/home/main/';
+    </script>
+
     <header id="header" class="bg-gray-900/50 backdrop-blur-lg border-b border-white/10 shadow-lg shadow-black/20 fixed top-0 left-0 right-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-3xl font-bold text-white"><img src="./identidade/Logo sem Fundo/01_Branco.png" alt="Lidera Logo" class="h-10"></a>
+            <a href="#" class="text-3xl font-bold text-white"><img data-src="01_Branco.png" alt="Lidera Logo" class="h-10 github-img"></a>
             <nav class="hidden md:flex space-x-8 items-center">
                 <a href="#home" class="text-gray-300 hover:text-[#FFC866] transition duration-300">Início</a>
                 <a href="#event" class="text-gray-300 hover:text-[#FFC866] transition duration-300">Evento</a>
                 <a href="#pillars" class="text-gray-300 hover:text-[#FFC866] transition duration-300">Pilares</a>
                 <a href="#speakers" class="text-gray-300 hover:text-[#FFC866] transition duration-300">Founders</a>
                 <a href="#solutions" class="text-gray-300 hover:text-[#FFC866] transition duration-300">Soluções</a>
-                <a href="#contact" class="text-gray-300 hover:text-[#FFC866] transition duration-300">Contato</a>
                 <a href="#contact" class="bg-cyan-500 text-white px-5 py-2 rounded-full hover:bg-cyan-600 transition duration-300 font-semibold">FALE CONOSCO</a>
             </nav>
             <button id="mobile-menu-button" class="md:hidden text-2xl text-white">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
-        <!-- Menu Móvel -->
         <div id="mobile-menu" class="hidden md:hidden bg-gray-900/80 backdrop-blur-lg">
             <a href="#home" class="block py-3 px-6 text-sm text-gray-200 hover:bg-gray-700/50">Início</a>
             <a href="#event" class="block py-3 px-6 text-sm text-gray-200 hover:bg-gray-700/50">Evento</a>
             <a href="#pillars" class="block py-3 px-6 text-sm text-gray-200 hover:bg-gray-700/50">Pilares</a>
             <a href="#speakers" class="block py-3 px-6 text-sm text-gray-200 hover:bg-gray-700/50">Founders</a>
             <a href="#solutions" class="block py-3 px-6 text-sm text-gray-200 hover:bg-gray-700/50">Soluções</a>
-            <a href="#contact" class="block py-3 px-6 text-sm text-gray-200 hover:bg-gray-700/50">Contato</a>
             <a href="#contact" class="block py-4 px-6 text-sm bg-cyan-500 text-white text-center font-semibold">FALE CONOSCO</a>
         </div>
     </header>
 
     <main>
-        <!-- Seção Hero -->
         <section id="home" class="hero-bg h-screen flex items-center justify-center text-white text-center pt-20">
             <div class="container mx-auto px-6">
                 <div class="golden-key-container mb-8">
-                    <img src="./identidade/golden-key.png" alt="Golden Key" class="golden-key mx-auto w-24 h-auto">
+                    <img data-src="golden-key.png" alt="Golden Key" class="golden-key mx-auto w-24 h-auto github-img">
                 </div>
                 <h1 class="text-4xl md:text-7xl font-extrabold my-4 uppercase leading-tight bg-clip-text text-transparent bg-gradient-to-r from-[#FFC866] to-[#FFC866]">DESTRAVE O POTENCIAL DA SUA LIDERANÇA</h1>
                 <h3 class="text-lg md:text-xl font-light max-w-3xl mx-auto mt-6 text-gray-300">
@@ -146,7 +136,6 @@
             </div>
         </section>
 
-        <!-- Seção Evento -->
         <section id="event" class="py-24 bg-gray-900/50">
             <div class="container mx-auto px-6 reveal">
                 <div class="grid md:grid-cols-2 gap-12 items-center bg-gray-800/50 backdrop-blur-sm border border-white/10 rounded-lg shadow-lg p-8">
@@ -164,48 +153,27 @@
                         <a href="#" class="bg-cyan-500 text-white px-8 py-4 rounded-full hover:bg-cyan-600 transition-transform duration-300 text-lg font-semibold inline-block transform hover:scale-105 shadow-lg shadow-cyan-500/30">GARANTA SEU INGRESSO - LOTE 1</a>
                     </div>
                     <div>
-                        <!-- Altere o src para o caminho da imagem real -->
-                        <img src="./assets/images/alice-salazar.jpg" alt="Foto de Alice Salazar" class="rounded-lg shadow-2xl shadow-black/30 w-full h-auto object-cover">
+                        <img data-src="p04-save_the_date.png" alt="Save the Date: Lidera 2ª Edição com Alice Salazar" class="rounded-lg shadow-2xl shadow-black/30 w-full h-auto object-cover github-img">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Seção Tarja Rolante -->
-        <section class="bg-[#FFC866] py-4 text-white overflow-hidden">
+        <section class="bg-[#FFC866] py-4 text-gray-900 overflow-hidden">
             <div class="flex whitespace-nowrap">
                 <div class="scrolling-text flex-shrink-0 flex items-center">
-                    <span class="mx-8 text-xl font-semibold uppercase">DESENVOLVA, INSPIRE, LIDERE</span>
-                    <i class="fas fa-key text-xl"></i>
-                    <span class="mx-8 text-xl font-semibold uppercase">DESTRAVE SEU POTENCIAL</span>
-                    <i class="fas fa-key text-xl"></i>
-                    <span class="mx-8 text-xl font-semibold uppercase">LIDERANÇA QUE GERA RESULTADOS</span>
-                    <i class="fas fa-key text-xl"></i>
-                    <span class="mx-8 text-xl font-semibold uppercase">DESENVOLVA, INSPIRE, LIDERE</span>
-                    <i class="fas fa-key text-xl"></i>
-                    <span class="mx-8 text-xl font-semibold uppercase">DESTRAVE SEU POTENCIAL</span>
-                    <i class="fas fa-key text-xl"></i>
-                    <span class="mx-8 text-xl font-semibold uppercase">LIDERANÇA QUE GERA RESULTADOS</span>
-                    <i class="fas fa-key text-xl"></i>
+                    <span class="mx-8 text-xl font-semibold uppercase">DESENVOLVA, INSPIRE, LIDERE</span><i class="fas fa-key text-xl mx-8"></i>
+                    <span class="mx-8 text-xl font-semibold uppercase">DESTRAVE SEU POTENCIAL</span><i class="fas fa-key text-xl mx-8"></i>
+                    <span class="mx-8 text-xl font-semibold uppercase">LIDERANÇA QUE GERA RESULTADOS</span><i class="fas fa-key text-xl mx-8"></i>
                 </div>
-                 <div class="scrolling-text flex-shrink-0 flex items-center">
-                    <span class="mx-8 text-xl font-semibold uppercase">DESENVOLVA, INSPIRE, LIDERE</span>
-                    <i class="fas fa-key text-xl"></i>
-                    <span class="mx-8 text-xl font-semibold uppercase">DESTRAVE SEU POTENCIAL</span>
-                    <i class="fas fa-key text-xl"></i>
-                    <span class="mx-8 text-xl font-semibold uppercase">LIDERANÇA QUE GERA RESULTADOS</span>
-                    <i class="fas fa-key text-xl"></i>
-                    <span class="mx-8 text-xl font-semibold uppercase">DESENVOLVA, INSPIRE, LIDERE</span>
-                    <i class="fas fa-key text-xl"></i>
-                    <span class="mx-8 text-xl font-semibold uppercase">DESTRAVE SEU POTENCIAL</span>
-                    <i class="fas fa-key text-xl"></i>
-                    <span class="mx-8 text-xl font-semibold uppercase">LIDERANÇA QUE GERA RESULTADOS</span>
-                    <i class="fas fa-key text-xl"></i>
+                 <div class="scrolling-text flex-shrink-0 flex items-center" aria-hidden="true">
+                    <span class="mx-8 text-xl font-semibold uppercase">DESENVOLVA, INSPIRE, LIDERE</span><i class="fas fa-key text-xl mx-8"></i>
+                    <span class="mx-8 text-xl font-semibold uppercase">DESTRAVE SEU POTENCIAL</span><i class="fas fa-key text-xl mx-8"></i>
+                    <span class="mx-8 text-xl font-semibold uppercase">LIDERANÇA QUE GERA RESULTADOS</span><i class="fas fa-key text-xl mx-8"></i>
                 </div>
             </div>
         </section>
 
-        <!-- Seção Pilares de Atuação -->
         <section id="pillars" class="py-24 bg-transparent">
             <div class="container mx-auto px-6 reveal">
                 <div class="text-center">
@@ -213,19 +181,16 @@
                     <p class="section-subtitle">Soluções integradas para destravar o seu crescimento.</p>
                 </div>
                 <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Card Pilar 1 -->
                     <div class="pillar-card bg-gray-800/50 backdrop-blur-sm border border-white/10 rounded-lg shadow-lg p-8 text-center transition-all duration-300 hover:border-indigo-500/50 hover:shadow-indigo-500/20 hover:-translate-y-2">
                         <i class="fas fa-users text-5xl text-cyan-400 mb-4"></i>
                         <h3 class="text-2xl font-bold text-white mb-2">Gestão e Liderança</h3>
                         <p class="text-gray-400">Desenvolvemos líderes e equipes de alta performance com foco em cultura, processos e resultados.</p>
                     </div>
-                    <!-- Card Pilar 2 -->
                     <div class="pillar-card bg-gray-800/50 backdrop-blur-sm border border-white/10 rounded-lg shadow-lg p-8 text-center transition-all duration-300 hover:border-indigo-500/50 hover:shadow-indigo-500/20 hover:-translate-y-2">
                         <i class="fas fa-cogs text-5xl text-cyan-400 mb-4"></i>
                         <h3 class="text-2xl font-bold text-white mb-2">Vendas e Operações</h3>
                         <p class="text-gray-400">Otimizamos seus processos comerciais e operacionais para maximizar a eficiência e a lucratividade.</p>
                     </div>
-                    <!-- Card Pilar 3 -->
                     <div class="pillar-card bg-gray-800/50 backdrop-blur-sm border border-white/10 rounded-lg shadow-lg p-8 text-center transition-all duration-300 hover:border-indigo-500/50 hover:shadow-indigo-500/20 hover:-translate-y-2">
                         <i class="fas fa-bullhorn text-5xl text-cyan-400 mb-4"></i>
                         <h3 class="text-2xl font-bold text-white mb-2">Marketing e Posicionamento</h3>
@@ -235,7 +200,6 @@
             </div>
         </section>
 
-        <!-- Seção Especialistas (Founders) -->
         <section id="speakers" class="py-24 bg-gray-900/50">
             <div class="container mx-auto px-6 reveal">
                 <div class="text-center">
@@ -243,11 +207,9 @@
                     <p class="section-subtitle">Conheça os sócios-fundadores do Lidera.</p>
                 </div>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Card do Especialista -->
                     <div class="founder-card bg-gray-800/50 backdrop-blur-sm border border-white/10 rounded-lg shadow-lg overflow-hidden text-center group transition-all duration-300">
                         <div class="relative cursor-pointer founder-toggle">
-                            <!-- Altere o src para o caminho da imagem real -->
-                            <img src="./images/charles-simon.jpg" alt="Charles Simon" class="w-full h-64 object-cover object-top">
+                            <img data-src="charles-simon.jpg" alt="Foto de Charles Simon" class="w-full h-64 object-cover object-top github-img">
                             <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <i class="fas fa-plus text-white text-3xl"></i>
                             </div>
@@ -263,11 +225,9 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Card do Especialista -->
                     <div class="founder-card bg-gray-800/50 backdrop-blur-sm border border-white/10 rounded-lg shadow-lg overflow-hidden text-center group transition-all duration-300">
                          <div class="relative cursor-pointer founder-toggle">
-                            <!-- Altere o src para o caminho da imagem real -->
-                            <img src="./images/guigo-emerim.jpg" alt="Guilherme Emerim" class="w-full h-64 object-cover object-top">
+                             <img data-src="guigo-emerim.jpg" alt="Foto de Guilherme Emerim" class="w-full h-64 object-cover object-top github-img">
                             <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <i class="fas fa-plus text-white text-3xl"></i>
                             </div>
@@ -283,22 +243,20 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Card do Especialista -->
                     <div class="founder-card bg-gray-800/50 backdrop-blur-sm border border-white/10 rounded-lg shadow-lg overflow-hidden text-center group transition-all duration-300">
                          <div class="relative cursor-pointer founder-toggle">
-                            <!-- Altere o src para o caminho da imagem real -->
-                            <img src="./images/rodrigo-ribas.jpg" alt="Rodrigo" class="w-full h-64 object-cover object-top">
+                             <img data-src="rodrigo-ribas.jpg" alt="Foto de Rodrigo Ribas" class="w-full h-64 object-cover object-top github-img">
                             <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <i class="fas fa-plus text-white text-3xl"></i>
                             </div>
                         </div>
                         <div class="p-6 founder-toggle cursor-pointer">
-                            <h3 class="text-xl font-bold text-white">Rodrigo</h3>
+                            <h3 class="text-xl font-bold text-white">Rodrigo Ribas</h3>
                             <p class="text-[#FFC866] font-semibold">Co-Fundador e Especialista em Marketing</p>
                         </div>
                         <div class="founder-bio">
                             <div class="text-left px-6 pb-6">
-                                <p class="text-gray-400 text-sm mb-4">Mini-bio sobre as competências e experiências relevantes de Rodrigo para o negócio.</p>
+                                <p class="text-gray-400 text-sm mb-4">Mini-bio sobre as competências e experiências relevantes de Rodrigo Ribas para o negócio.</p>
                                 <a href="#" class="bg-cyan-500 text-white text-sm px-4 py-2 rounded-full hover:bg-cyan-600 transition duration-300 font-semibold inline-block">Download Apresentação</a>
                             </div>
                         </div>
@@ -307,7 +265,6 @@
             </div>
         </section>
         
-        <!-- Seção Soluções -->
         <section id="solutions" class="py-24 bg-transparent">
             <div class="container mx-auto px-6 reveal">
                 <div class="text-center">
@@ -316,7 +273,6 @@
                 </div>
                 
                 <div class="max-w-4xl mx-auto space-y-4">
-                    <!-- Item Acordeão -->
                     <div class="accordion-item bg-gray-800/50 border border-white/10 rounded-lg overflow-hidden">
                         <button class="accordion-header w-full flex justify-between items-center text-left p-6">
                             <div class="flex items-center">
@@ -329,7 +285,6 @@
                             <p class="text-gray-400">Diagnóstico e implementação de estratégias para estruturar sua gestão, otimizar operações e acelerar o crescimento. Inclui consultoria empresarial, financeira e assessoria em gestão de tráfego.</p>
                         </div>
                     </div>
-                    <!-- Item Acordeão -->
                     <div class="accordion-item bg-gray-800/50 border border-white/10 rounded-lg overflow-hidden">
                         <button class="accordion-header w-full flex justify-between items-center text-left p-6">
                             <div class="flex items-center">
@@ -342,7 +297,6 @@
                             <p class="text-gray-400">Programas de desenvolvimento para líderes e equipes através de cursos (IA, Liderança), mentorias personalizadas e workshops práticos, focados em comunicação e cultura organizacional.</p>
                         </div>
                     </div>
-                    <!-- Item Acordeão -->
                     <div class="accordion-item bg-gray-800/50 border border-white/10 rounded-lg overflow-hidden">
                         <button class="accordion-header w-full flex justify-between items-center text-left p-6">
                             <div class="flex items-center">
@@ -359,7 +313,6 @@
             </div>
         </section>
 
-        <!-- Seção Depoimentos -->
         <section id="testimonials" class="py-24 bg-gray-900/50">
             <div class="container mx-auto px-6 reveal">
                 <div class="text-center">
@@ -368,44 +321,40 @@
                 </div>
                 <div class="max-w-3xl mx-auto bg-gray-800/50 backdrop-blur-sm border border-white/10 rounded-lg shadow-lg p-8 text-center relative overflow-hidden">
                     <div id="testimonial-slider">
-                        <!-- Depoimento 1 -->
                         <div class="testimonial-item">
                             <p class="text-xl italic text-gray-300">"O Lidera transformou nossa forma de gerir a equipe. Os resultados foram imediatos."</p>
+                            <div class="mt-6">
+                                 <img data-src="placeholder-cliente.jpg" alt="Foto do Cliente" class="w-20 h-20 rounded-full mx-auto mb-2 border-2 border-cyan-400 object-cover github-img">
+                                <h4 class="font-bold text-white text-lg">João da Silva</h4>
+                                <p class="text-cyan-400">CEO, Empresa Exemplo</p>
+                            </div>
                         </div>
-                        <!-- Depoimento 2 -->
                         <div class="testimonial-item hidden">
                             <p class="text-xl italic text-gray-300">"Nunca imaginei que poderíamos otimizar tanto nossos processos. Essencial para qualquer PME."</p>
+                            <div class="mt-6">
+                                <img data-src="placeholder-cliente-2.jpg" alt="Foto do Cliente 2" class="w-20 h-20 rounded-full mx-auto mb-2 border-2 border-cyan-400 object-cover github-img">
+                                <h4 class="font-bold text-white text-lg">Maria Oliveira</h4>
+                                <p class="text-cyan-400">Diretora, Negócio Local</p>
+                            </div>
                         </div>
-                        <!-- Depoimento 3 -->
-                        <div class="testimonial-item hidden">
-                            <p class="text-xl italic text-gray-300">"A consultoria de marketing digital abriu portas que não sabíamos que existiam. Recomendo fortemente."</p>
-                        </div>
-                    </div>
-                    <div class="mt-6">
-                        <!-- Altere o src para o caminho da imagem real -->
-                        <img src="./assets/images/cliente-depoimento.jpg" alt="Foto do Cliente" class="w-20 h-20 rounded-full mx-auto mb-2 border-2 border-cyan-400">
-                        <h4 class="font-bold text-white text-lg">João da Silva</h4>
-                        <p class="text-cyan-400">CEO, Empresa Exemplo</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Seção Clientes -->
         <section id="clients" class="py-20 bg-black/20">
             <div class="container mx-auto px-6 reveal">
                 <h3 class="text-center text-gray-400 text-sm font-semibold uppercase tracking-widest mb-8">EMPRESAS QUE CONFIAM E APOIAM O LIDERA</h3>
-                <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
-                    <img src="https://placehold.co/150x50/ffffff/cccccc?text=EMPRESA+1" alt="Logo Empresa 1" class="h-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300">
-                    <img src="https://placehold.co/150x50/ffffff/cccccc?text=EMPRESA+2" alt="Logo Empresa 2" class="h-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300">
-                    <img src="https://placehold.co/150x50/ffffff/cccccc?text=EMPRESA+3" alt="Logo Empresa 3" class="h-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300">
-                    <img src="https://placehold.co/150x50/ffffff/cccccc?text=EMPRESA+4" alt="Logo Empresa 4" class="h-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300">
-                    <img src="https://placehold.co/150x50/ffffff/cccccc?text=EMPRESA+5" alt="Logo Empresa 5" class="h-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300">
+                <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-8">
+                    <img data-src="logo-sicredi.png" alt="Logo Sicredi" class="h-10 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 github-img">
+                    <img data-src="logo-savale.png" alt="Logo Savale" class="h-10 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 github-img">
+                    <img data-src="logo-uniliv.png" alt="Logo Uniliv" class="h-10 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 github-img">
+                    <img data-src="logo-connect.jpeg" alt="Logo Connect" class="h-10 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 github-img">
+                    <img data-src="logo-benditta-escuro.png" alt="Logo Benditta" class="h-10 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 github-img">
                 </div>
             </div>
         </section>
 
-        <!-- Seção Espaço Lidera -->
         <section id="space" class="py-24 bg-transparent">
             <div class="container mx-auto px-6 reveal">
                 <div class="grid md:grid-cols-2 gap-12 items-center">
@@ -417,17 +366,15 @@
                         <a href="#contact" class="bg-[#FFC866] text-white px-8 py-4 rounded-full hover:bg-[#E6B85C] transition-transform duration-300 text-lg font-semibold inline-block transform hover:scale-105 shadow-lg shadow-[#FFC866]/30">VENHA NOS VISITAR</a>
                     </div>
                     <div class="grid grid-cols-2 gap-4">
-                        <!-- Altere os src para os caminhos das imagens reais -->
-                        <img src="./assets/images/espaco-01.jpg" class="rounded-lg shadow-lg w-full h-full object-cover">
-                        <img src="./assets/images/espaco-02.jpg" class="rounded-lg shadow-lg w-full h-full object-cover">
-                        <img src="./assets/images/espaco-03.jpg" class="rounded-lg shadow-lg w-full h-full object-cover">
-                        <img src="./assets/images/espaco-04.jpg" class="rounded-lg shadow-lg w-full h-full object-cover">
+                        <img data-src="espaco-01.jpg" alt="Foto do Espaço Lidera 1" class="rounded-lg shadow-lg w-full h-full object-cover github-img">
+                        <img data-src="espaco-02.jpg" alt="Foto do Espaço Lidera 2" class="rounded-lg shadow-lg w-full h-full object-cover github-img">
+                        <img data-src="espaco-03.jpg" alt="Foto do Espaço Lidera 3" class="rounded-lg shadow-lg w-full h-full object-cover github-img">
+                        <img data-src="espaco-04.jpg" alt="Foto do Espaço Lidera 4" class="rounded-lg shadow-lg w-full h-full object-cover github-img">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Seção Valores -->
         <section id="values" class="py-24 bg-gray-900/50">
             <div class="container mx-auto px-6 reveal">
                 <div class="text-center">
@@ -435,19 +382,16 @@
                     <p class="section-subtitle">Os 3 pilares da nossa cultura.</p>
                 </div>
                 <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Valor 1 -->
                     <div class="bg-gray-800/50 backdrop-blur-sm border border-white/10 rounded-lg shadow-lg p-8 text-center">
                         <i class="fas fa-heart text-5xl text-cyan-400 mb-4"></i>
                         <h3 class="text-2xl font-bold text-white mb-2">Conexão Humana</h3>
                         <p class="text-gray-400">Agimos com honestidade, respeito inegociável e humildade, em um ambiente leve e transparente.</p>
                     </div>
-                    <!-- Valor 2 -->
                     <div class="bg-gray-800/50 backdrop-blur-sm border border-white/10 rounded-lg shadow-lg p-8 text-center">
                         <i class="fas fa-lightbulb text-5xl text-cyan-400 mb-4"></i>
                         <h3 class="text-2xl font-bold text-white mb-2">Atitude Empreendedora</h3>
                         <p class="text-gray-400">Somos movidos pela criatividade em fazer a diferença e pela generosidade de entregar sempre mais.</p>
                     </div>
-                    <!-- Valor 3 -->
                     <div class="bg-gray-800/50 backdrop-blur-sm border border-white/10 rounded-lg shadow-lg p-8 text-center">
                         <i class="fas fa-star text-5xl text-cyan-400 mb-4"></i>
                         <h3 class="text-2xl font-bold text-white mb-2">Liderança pelo Exemplo</h3>
@@ -457,7 +401,6 @@
             </div>
         </section>
 
-        <!-- Seção Missão -->
         <section id="mission" class="py-24 bg-transparent">
             <div class="container mx-auto px-6 reveal text-center max-w-4xl">
                 <h2 class="section-title text-white">NOSSA MISSÃO</h2>
@@ -467,7 +410,6 @@
             </div>
         </section>
 
-        <!-- Seção Contato -->
         <section id="contact" class="py-24 bg-gray-900/50">
             <div class="container mx-auto px-6 reveal">
                 <div class="text-center">
@@ -475,13 +417,13 @@
                     <p class="section-subtitle">Pronto para destravar o potencial da sua equipe? Fale com um de nossos especialistas.</p>
                 </div>
                 <div class="max-w-3xl mx-auto">
-                    <form action="#" method="POST" class="space-y-6">
+                    <form action="https://exemplo.com/seu-endpoint" method="POST" class="space-y-6">
                         <div class="grid md:grid-cols-2 gap-6">
-                            <input type="text" placeholder="Seu Nome" class="w-full p-4 bg-gray-800/50 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#FFC866]">
-                            <input type="email" placeholder="Seu E-mail" class="w-full p-4 bg-gray-800/50 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#FFC866]">
+                            <input type="text" name="name" placeholder="Seu Nome" required class="w-full p-4 bg-gray-800/50 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#FFC866]">
+                            <input type="email" name="email" placeholder="Seu E-mail" required class="w-full p-4 bg-gray-800/50 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#FFC866]">
                         </div>
                         <div>
-                            <textarea placeholder="Sua Mensagem" rows="5" class="w-full p-4 bg-gray-800/50 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#FFC866]"></textarea>
+                            <textarea name="message" placeholder="Sua Mensagem" rows="5" required class="w-full p-4 bg-gray-800/50 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#FFC866]"></textarea>
                         </div>
                         <div class="text-center">
                             <button type="submit" class="bg-[#FFC866] text-white px-8 py-4 rounded-full hover:bg-[#E6B85C] transition-transform duration-300 text-lg font-semibold transform hover:scale-105 shadow-lg shadow-[#FFC866]/30">Enviar Mensagem</button>
@@ -492,19 +434,15 @@
         </section>
     </main>
 
-    <!-- Botão Flutuante do WhatsApp -->
-    <!-- Altere o número de telefone aqui -->
     <a href="https://wa.me/5551000000000" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg transform hover:scale-110 transition-transform duration-300 z-40">
         <i class="fab fa-whatsapp text-4xl"></i>
     </a>
 
-    <!-- Rodapé -->
     <footer class="bg-black py-12">
         <div class="container mx-auto px-6 text-center text-gray-400">
             <div class="flex justify-center space-x-6 mb-6">
-                <!-- Altere os links das redes sociais aqui -->
-                <a href="#" class="text-2xl hover:text-[#FFC866] transition duration-300"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="text-2xl hover:text-[#FFC866] transition duration-300"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://instagram.com/seu_usuario" target="_blank" rel="noopener noreferrer" class="text-2xl hover:text-[#FFC866] transition duration-300"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com/in/seu_usuario" target="_blank" rel="noopener noreferrer" class="text-2xl hover:text-[#FFC866] transition duration-300"><i class="fab fa-linkedin-in"></i></a>
             </div>
             <p>&copy; <span id="year"></span> Lidera Soluções. Todos os direitos reservados.</p>
         </div>
@@ -512,6 +450,16 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // SCRIPT PARA CARREGAR IMAGENS DO GITHUB - NÃO PRECISA ALTERAR
+            if (typeof GITHUB_IMAGE_URL !== 'undefined') {
+                document.querySelectorAll('.github-img').forEach(img => {
+                    const fileName = img.getAttribute('data-src');
+                    if (fileName) {
+                        img.src = GITHUB_IMAGE_URL + fileName;
+                    }
+                });
+            }
+
             // Lógica do Menu Móvel
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -556,13 +504,11 @@
                     toggle.addEventListener('click', () => {
                         const wasExpanded = card.classList.contains('expanded');
 
-                        // Fecha todos os outros cards
                         founderCards.forEach(otherCard => {
                             otherCard.classList.remove('expanded');
                             otherCard.querySelector('.founder-bio').style.maxHeight = null;
                         });
 
-                        // Abre ou fecha o card atual
                         if (!wasExpanded) {
                             card.classList.add('expanded');
                             bio.style.maxHeight = bio.scrollHeight + "px";
@@ -573,8 +519,8 @@
 
             // Lógica do Slider de Depoimentos
             const testimonialItems = document.querySelectorAll('.testimonial-item');
-            let currentTestimonial = 0;
-            if (testimonialItems.length > 0) {
+            if (testimonialItems.length > 1) {
+                let currentTestimonial = 0;
                 setInterval(() => {
                     testimonialItems[currentTestimonial].classList.add('hidden');
                     currentTestimonial = (currentTestimonial + 1) % testimonialItems.length;
@@ -595,9 +541,7 @@
                 });
             }, { threshold: 0.1 });
 
-            revealElements.forEach(el => {
-                observer.observe(el);
-            });
+            revealElements.forEach(el => observer.observe(el));
 
             // Rolagem suave para âncoras (com ajuste para header fixo)
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
