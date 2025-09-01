@@ -35,6 +35,26 @@
             50% { filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.8)) drop-shadow(0 0 25px rgba(255, 215, 0, 0.6)); }
         }
         .golden-key { animation: glow 2s infinite alternate; }
+        @keyframes shake-users {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-2px) rotate(-1deg); }
+            75% { transform: translateX(2px) rotate(1deg); }
+        }
+        @keyframes spin-cogs {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes vibrate-bullhorn {
+            0% { transform: translate(0); }
+            20% { transform: translate(-1px, 1px) rotate(-1deg); }
+            40% { transform: translate(-1px, -1px) rotate(-1deg); }
+            60% { transform: translate(1px, 1px) rotate(1deg); }
+            80% { transform: translate(1px, -1px) rotate(1deg); }
+            100% { transform: translate(0); }
+        }
+        .pillar-card:hover .fa-users { animation: shake-users 0.5s ease-in-out infinite; }
+        .pillar-card:hover .fa-cogs { animation: spin-cogs 2s linear infinite; }
+        .pillar-card:hover .fa-bullhorn { animation: vibrate-bullhorn 0.5s linear infinite; }
     </style>
 </head>
 <body class="bg-gradient-to-br from-gray-900 via-[#1d3573] to-indigo-900 text-gray-200">
@@ -92,7 +112,7 @@
                             <p><i class="fas fa-calendar-alt mr-2 text-cyan-400"></i> 22 de Outubro de 2025</p>
                             <p><i class="fas fa-clock mr-2 text-cyan-400"></i> 19h30</p>
                         </div>
-                        <a href="#" class="bg-cyan-500 text-white px-8 py-4 rounded-full hover:bg-cyan-600 transition-transform duration-300 text-lg font-semibold inline-block transform hover:scale-105 shadow-lg shadow-cyan-500/30">GARANTA SEU INGRESSO - LOTE 1</a>
+                        <a href="https://somoslidera.github.io/alice-salazar/" class="bg-cyan-500 text-white px-8 py-4 rounded-full hover:bg-cyan-600 transition-transform duration-300 text-lg font-semibold inline-block transform hover:scale-105 shadow-lg shadow-cyan-500/30">GARANTA SEU INGRESSO - LOTE 1</a>
                     </div>
                     <div>
                         <img data-src="p04-save_the_date.png" alt="Save the Date: Lidera 2ª Edição com Alice Salazar" class="rounded-lg shadow-2xl shadow-black/30 w-full h-auto object-cover github-img">
@@ -149,58 +169,37 @@
                     <p class="section-subtitle">Conheça os sócios-fundadores do Lidera.</p>
                 </div>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="founder-card bg-gray-800/50 backdrop-blur-sm border border-white/10 rounded-lg shadow-lg overflow-hidden text-center group transition-all duration-300">
-                        <div class="relative cursor-pointer founder-toggle">
-                            <img data-src="charles-simon.jpg" alt="Foto de Charles Simon" class="w-full h-64 object-cover object-top github-img">
-                            <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <i class="fas fa-plus text-white text-3xl"></i>
+                    <div class="founder-card bg-gray-800/50 backdrop-blur-sm border border-white/10 rounded-lg shadow-lg text-center transition-all duration-300 p-8">
+                        <div class="relative flex justify-center items-center mb-6">
+                            <div class="w-40 h-40 rounded-full overflow-hidden border-4 border-gray-700 hover:border-cyan-400 transition-all duration-300">
+                                <img data-src="charles-simon.jpg" alt="Foto de Charles Simon" class="w-full h-full object-cover github-img">
                             </div>
                         </div>
-                        <div class="p-6 founder-toggle cursor-pointer">
+                        <div>
                             <h3 class="text-xl font-bold text-white">Charles Simon</h3>
                             <p class="text-[#FFC866] font-semibold">Co-Fundador e Estrategista</p>
                         </div>
-                        <div class="founder-bio">
-                            <div class="text-left px-6 pb-6">
-                                <p class="text-gray-400 text-sm mb-4">Mini-bio sobre as competências e experiências relevantes de Charles Simon para o negócio.</p>
-                                <a href="#" class="bg-cyan-500 text-white text-sm px-4 py-2 rounded-full hover:bg-cyan-600 transition duration-300 font-semibold inline-block">Download Apresentação</a>
-                            </div>
-                        </div>
                     </div>
-                    <div class="founder-card bg-gray-800/50 backdrop-blur-sm border border-white/10 rounded-lg shadow-lg overflow-hidden text-center group transition-all duration-300">
-                         <div class="relative cursor-pointer founder-toggle">
-                             <img data-src="guigo-emerim.jpg" alt="Foto de Guilherme Emerim" class="w-full h-64 object-cover object-top github-img">
-                            <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <i class="fas fa-plus text-white text-3xl"></i>
+                    <div class="founder-card bg-gray-800/50 backdrop-blur-sm border border-white/10 rounded-lg shadow-lg text-center transition-all duration-300 p-8">
+                        <div class="relative flex justify-center items-center mb-6">
+                            <div class="w-40 h-40 rounded-full overflow-hidden border-4 border-gray-700 hover:border-cyan-400 transition-all duration-300">
+                                <img data-src="guigo-emerim.jpg" alt="Foto de Guilherme Emerim" class="w-full h-full object-cover github-img">
                             </div>
                         </div>
-                        <div class="p-6 founder-toggle cursor-pointer">
+                        <div>
                             <h3 class="text-xl font-bold text-white">Guilherme Emerim</h3>
                             <p class="text-[#FFC866] font-semibold">Co-Fundador e Especialista em Gestão</p>
                         </div>
-                        <div class="founder-bio">
-                            <div class="text-left px-6 pb-6">
-                                <p class="text-gray-400 text-sm mb-4">Mini-bio sobre as competências e experiências relevantes de Guilherme Emerim para o negócio.</p>
-                                <a href="#" class="bg-cyan-500 text-white text-sm px-4 py-2 rounded-full hover:bg-cyan-600 transition duration-300 font-semibold inline-block">Download Apresentação</a>
-                            </div>
-                        </div>
                     </div>
-                    <div class="founder-card bg-gray-800/50 backdrop-blur-sm border border-white/10 rounded-lg shadow-lg overflow-hidden text-center group transition-all duration-300">
-                         <div class="relative cursor-pointer founder-toggle">
-                             <img data-src="rodrigo-ribas.jpg" alt="Foto de Rodrigo Ribas" class="w-full h-64 object-cover object-top github-img">
-                            <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <i class="fas fa-plus text-white text-3xl"></i>
+                    <div class="founder-card bg-gray-800/50 backdrop-blur-sm border border-white/10 rounded-lg shadow-lg text-center transition-all duration-300 p-8">
+                        <div class="relative flex justify-center items-center mb-6">
+                            <div class="w-40 h-40 rounded-full overflow-hidden border-4 border-gray-700 hover:border-cyan-400 transition-all duration-300">
+                                <img data-src="rodrigo-ribas.jpg" alt="Foto de Rodrigo Ribas" class="w-full h-full object-cover github-img">
                             </div>
                         </div>
-                        <div class="p-6 founder-toggle cursor-pointer">
+                        <div>
                             <h3 class="text-xl font-bold text-white">Rodrigo Ribas</h3>
                             <p class="text-[#FFC866] font-semibold">Co-Fundador e Especialista em Marketing</p>
-                        </div>
-                        <div class="founder-bio">
-                            <div class="text-left px-6 pb-6">
-                                <p class="text-gray-400 text-sm mb-4">Mini-bio sobre as competências e experiências relevantes de Rodrigo Ribas para o negócio.</p>
-                                <a href="#" class="bg-cyan-500 text-white text-sm px-4 py-2 rounded-full hover:bg-cyan-600 transition duration-300 font-semibold inline-block">Download Apresentação</a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -431,25 +430,7 @@
                 });
             });
 
-            // Lógica do Card Expansível dos Founders
-            const founderCards = document.querySelectorAll('.founder-card');
-            founderCards.forEach(card => {
-                const toggles = card.querySelectorAll('.founder-toggle');
-                const bio = card.querySelector('.founder-bio');
-                toggles.forEach(toggle => {
-                    toggle.addEventListener('click', () => {
-                        const wasExpanded = card.classList.contains('expanded');
-                        founderCards.forEach(otherCard => {
-                            otherCard.classList.remove('expanded');
-                            otherCard.querySelector('.founder-bio').style.maxHeight = null;
-                        });
-                        if (!wasExpanded) {
-                            card.classList.add('expanded');
-                            bio.style.maxHeight = bio.scrollHeight + "px";
-                        }
-                    });
-                });
-            });
+            
 
             // Lógica do Slider de Depoimentos
             const testimonialItems = document.querySelectorAll('.testimonial-item');
